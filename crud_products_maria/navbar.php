@@ -1,9 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #769c8b;">
 <div class="container">
-    <a class="navbar-brand" href="/php/06_php-exercises/crud_products/home.php">Products</a>
+    <a class="navbar-brand" href="/php/06_php-exercises/BE21_PHP-Day06_Maria-Nancy-Rasmi/crud_products_maria/home.php">Products</a>
     
     <ul class="navbar-nav ml-3">
         <?php
+            $base_path = "/php/06_php-exercises/BE21_PHP-Day06_Maria-Nancy-Rasmi/crud_products_maria/";
             $isAdmin = false;
             $currentUser = "";
             if (isset($_SESSION['user']) != "") {
@@ -16,33 +17,28 @@
             
             $menuItems = "";
             if ($currentUser != "") {
-                $menuItems = "<li class='nav-item active'>
-                                    <a class='navbar-brand' href='/php/06_php-exercises/crud_products/home.php'>Home</a>
+                $menuItems = "<li class='nav-item'>
+                                    <a class='navbar-brand' href='".$base_path."home.php'>Home</a>
                                 </li>";
                 if ($isAdmin) {
                     $menuItems .= "<li class='nav-item'>
-                                    <a class='navbar-brand' href='/php/06_php-exercises/crud_products/products/index.php'>Products</a>
-                                        </li>
+                                        <a class='navbar-brand' href='".$base_path."products/index.php'>Products</a>
+                                    </li>
                                     <li class='nav-item'>
-                                        <a class='navbar-brand' href='/php/06_php-exercises/crud_products/dashboard.php'>Manage User</a>
+                                        <a class='navbar-brand' href='".$base_path."dashboard.php'>Manage User</a>
                                     </li>";
                 }
                 $menuItems .= "<li class='nav-item'>
-                                    <a class='navbar-brand' href='/php/06_php-exercises/crud_products/update.php?id=".$currentUser."'>Profile</a>
+                                    <a class='navbar-brand' href='".$base_path."update.php?id=".$currentUser."'>
+                                        ".$_SESSION['first_name']."'s Profile        
+                                        <img class='img-thumbnail rounded-circle menu-avatar' src='".$base_path."pictures/".$_SESSION['picture']."' alt='".$_SESSION['first_name'].";>
+                                            
+                                    </a>
                                 </li>
-                                
                                 <li class='nav-item'>
-                                    <div class='text-white' >ID: ".$currentUser."</div>
-                                    <a href='/php/06_php-exercises/crud_products/logout.php?logout'>Sign Out</a>
+                                    <a href='".$base_path."logout.php?logout'>Sign Out</a>
                                 </li>";                                    
             }
-            // var_dump($_SESSION) //=> array(1) { ["user"]=> int(2) }
-            //<div class='text-white' >Hi ".$rowUser['first_name']."</div>
-            /*
-            <li>
-                <img class='userImage img-thumbnail' src='/php/06_php-exercises/crud_products/pictures/".$rowUser['picture']." alt='".$rowUser['first_name'].";>
-            </li>
-            */
             
             echo $menuItems;
         ?>

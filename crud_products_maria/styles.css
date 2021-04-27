@@ -3,17 +3,42 @@
   background: linear-gradient(24deg, #35463e 0%, #769c8b 100%);
 }
 
-.img-thumbnail .userImage {
-  width: 150px;
-  height: 150px;
-}
-
 .img-thumbnail {
-  width: 100px !important;
-  height: 100px !important;
+  width: 80px !important;
+  height: 80px !important;
 }
 
-/* .userImage {
-    width: 150px;
-    height: 150px;
-  } */
+fieldset {
+  margin: auto;
+  margin-top: 100px;
+  width: 60%;
+}
+
+td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+tr {
+  text-align: left;
+}
+
+.userImage {
+  width: 100px;
+  height: auto;
+}
+
+.menu-avatar {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+.navbar-nav .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100px;
+  line-height: 100px;
+}

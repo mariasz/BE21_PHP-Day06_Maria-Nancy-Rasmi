@@ -52,17 +52,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Delete User</title>
         <?php require_once 'components/boot.php'?>
-        <style type= "text/css">
-            fieldset {
-                margin: auto;
-                margin-top: 100px;
-                width: 70% ;
-            }     
-            .img-thumbnail{
-                width: 70px !important;
-                height: 70px !important;
-            }    
-        </style>
+        <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
     <body>
         <?php include 'navbar.php' ?>

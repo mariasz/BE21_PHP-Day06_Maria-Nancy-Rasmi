@@ -114,6 +114,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login & Registration System</title>
         <?php require_once 'components/boot.php'?>
+        <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
     <body>
         <?php include 'navbar.php' ?>

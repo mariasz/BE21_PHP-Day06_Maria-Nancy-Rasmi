@@ -46,23 +46,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Adm-DashBoard</title>
         <?php require_once 'components/boot.php'?>
-        <style type="text/css">        
-            .img-thumbnail{
-                width: 70px !important;
-                height: 70px !important;
-            }
-            td{
-                text-align: left;
-                vertical-align: middle;
-            }
-            tr{
-                text-align: center;
-            }
-            .userImage{
-                width: 100px;
-                height: auto;
-            }
-        </style>
+        <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
     <body>
         <?php include 'navbar.php' ?>

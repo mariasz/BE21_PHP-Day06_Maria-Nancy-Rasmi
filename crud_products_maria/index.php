@@ -44,7 +44,7 @@ if (isset($_POST['btn-login'])) {
 
         $password = hash('sha256', $pass); // password hashing
 
-        $sqlSelect = "SELECT id, first_name, password, status FROM user WHERE email = ? ";
+        $sqlSelect = "SELECT id, first_name, password, status, picture, last_name FROM user WHERE email = ? ";
         $stmt = $connect->prepare($sqlSelect);
         $stmt->bind_param("s", $email);
         $work = $stmt->execute();
@@ -58,7 +58,10 @@ if (isset($_POST['btn-login'])) {
             else{
                 $_SESSION['user'] = $row['id']; 
                header( "Location: home.php");
-            }          
+            }    
+            $_SESSION['picture'] = $row['picture'];     
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
         } else {
             $errMSG = "Incorrect Credentials, Try again...";
         }
@@ -74,6 +77,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login & Registration System</title>
         <?php require_once 'components/boot.php'?>
+        <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
     <body>
         <?php include 'navbar.php' ?>
