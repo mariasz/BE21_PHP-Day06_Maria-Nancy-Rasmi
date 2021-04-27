@@ -1,0 +1,19 @@
+.hero {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(24deg, #35463e 0%, #769c8b 100%);
+}
+
+.img-thumbnail .userImage {
+  width: 150px;
+  height: 150px;
+}
+
+.img-thumbnail {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+/* .userImage {
+    width: 150px;
+    height: 150px;
+  } */
